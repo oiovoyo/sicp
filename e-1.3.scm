@@ -9,3 +9,7 @@
 
 ( summax 1 2 3)
 
+( summax 2 3 4 )
+
+ 
+
