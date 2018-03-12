@@ -4,3 +4,6 @@
 (define (zero? n)
   (= n 0)
   )
+(define (cube n) 
+  (* n n n)
+  )
