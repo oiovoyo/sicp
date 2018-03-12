@@ -1,7 +1,5 @@
+(load "common.scm")
 
-(define (even? n)
-  (= (remainder n 2) 0)
-  )
 (define (feii a b n)
   (cond ((= n 0) a)
   ((even? n) (feii a (* b b) (/ n 2)))

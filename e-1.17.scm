@@ -1,3 +1,4 @@
+(load "common.scm")
 (define (m a b)
   (mult 0 a b)
   )
@@ -14,9 +15,6 @@
   (/ b 2)
   )
 
-(define (even? b)
-  (= (remainder b 2) 0)
-  )
 
 (m 2 9)
 (m 3 9)
