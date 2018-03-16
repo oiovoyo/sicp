@@ -1,4 +1,4 @@
-(load "e-1.37.scm")
+(load "cont-frac.scm")
 
 (define (N i) 1)
 

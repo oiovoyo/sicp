@@ -1,4 +1,4 @@
-(load "p-1.21-fermat-little-theorem.scm")
+(load "fermat-test.scm")
 (define (timed-prime-test n) 
   ; (display n)
   (start-prime-test n (runtime)))
