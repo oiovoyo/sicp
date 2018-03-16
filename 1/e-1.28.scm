@@ -1,4 +1,4 @@
-(load "common.scm")
+(load "lib/common.scm")
 
 (define (expmod base exp m)
   (cond ((= exp 0) 1)

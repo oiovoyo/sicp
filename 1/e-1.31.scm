@@ -1,4 +1,4 @@
-(load "common.scm")
+(load "lib/common.scm")
 
 (define (product-i term a next b)
   (define (iter a result)

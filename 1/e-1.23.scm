@@ -1,4 +1,4 @@
-(load "fermat-test.scm")
+(load "lib/fermat-test.scm")
 (define (timed-prime-test n) 
   ; (display n)
   (start-prime-test n (runtime)))

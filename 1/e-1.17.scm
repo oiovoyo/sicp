@@ -1,4 +1,4 @@
-(load "common.scm")
+(load "lib/common.scm")
 (define (m a b)
   (mult 0 a b)
   )

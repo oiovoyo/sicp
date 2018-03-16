@@ -1,4 +1,4 @@
-(load "common.scm")
+(load "lib/common.scm")
 
 (define (gcd a b)
   (if (zero? b)

@@ -10,7 +10,7 @@
 
 ((repeated square 2) 5)
 
-(load "compose.scm")
+(load "lib/compose.scm")
 
 (define (repeated-with-compose f n)
   (if (= n 1)

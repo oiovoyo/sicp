@@ -1,4 +1,4 @@
-(load "common.scm")
+(load "lib/common.scm")
 
 (define (accumulate combiner null-value term a next b)
   (define (iter a result)

@@ -1,4 +1,4 @@
-(load "cont-frac.scm")
+(load "lib/cont-frac.scm")
 
 (define (N i) 1)
 

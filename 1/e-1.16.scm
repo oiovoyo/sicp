@@ -1,4 +1,4 @@
-(load "common.scm")
+(load "lib/common.scm")
 
 (define (feii a b n)
   (cond ((= n 0) a)

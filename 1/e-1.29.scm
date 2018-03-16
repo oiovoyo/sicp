@@ -1,4 +1,4 @@
-(load "common.scm")
+(load "lib/common.scm")
 (define (sum f a next b)
   (if (> a b) 
       0
