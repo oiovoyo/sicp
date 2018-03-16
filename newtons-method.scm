@@ -14,11 +14,11 @@
 (define (newton-transform g)
   (lambda (x) (- x (/ (g x) ((deriv g) x)))))
 
-(define (newton-method g guess)
+(define (newtons-method g guess)
   (fixed-point (newton-transform g) guess))
 
 (define (sqrt x)
-  (newton-method
+  (newtons-method
     (lambda (y) (- (square y) x)) 1.0))
 
 (sqrt 9.0)
