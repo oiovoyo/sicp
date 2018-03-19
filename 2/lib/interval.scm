@@ -9,4 +9,5 @@
 (define (lower-bound i)
   (min (car i) (cdr i))
   )
-
+(define (width i)
+  (/ (- (upper-bound i) (lower-bound i))))
