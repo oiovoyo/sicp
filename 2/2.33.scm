@@ -1,9 +1,4 @@
-(define (accumulate op initial seq)
-  (if (null? seq)
-      initial 
-      (op (car seq) 
-          (accumulate op initial (cdr seq)))))
-
+(load "lib/accumulate.scm")
 
 (define (map1 p seq)
   (accumulate (lambda (x y) (cons (p x) y)) nil seq))

@@ -1,8 +1,4 @@
-(define (accumulate op initial seq)
-  (if (null? seq)
-      initial 
-      (op (car seq) 
-          (accumulate op initial (cdr seq)))))
+(load "lib/accumulate.scm")
 (define (hornel-eval x coeff)
   (accumulate (lambda (this-coeff higher-terms)
                 (+ (* x higher-terms) this-coeff)) 0 coeff))
