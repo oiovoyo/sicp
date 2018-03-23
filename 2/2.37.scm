@@ -29,6 +29,12 @@
   (accumulate tran-f nil mat)
   )
 
+; 想法是这样的 但是如下代码在我这里怎么就不能得到想要的效果呢？
+(define (transpose-from-github mat)
+  (accumulate-n cons '() mat)
+  )
+(transpose-from-github  (list (list 1 2 3) (list 4 5 6) (list 7 8 9) (list 10 11 12)))
+
 (transpose  (list (list 1 2 3) (list 4 5 6) (list 7 8 9) (list 10 11 12)))
 (transpose (transpose  (list (list 1 2 3) (list 4 5 6) (list 7 8 9) (list 10 11 12))) )
 
