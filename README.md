@@ -1,2 +1,2 @@
 # SICP exercises
-## it's all about mathematic
+## it's all about mathematics
