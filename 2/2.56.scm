@@ -10,6 +10,12 @@
 
            (make-product (deriv (multiplier ex) var)
                          (multiplicand ex))))
+        ((exponent? ex)
+         (make-product 
+           (make-product (exponent-n ex) (make-exponent (exponent-base ex) (- (exponent-n ex) 1)))
+           (deriv (exponent-base ex) var)
+           )
+         )
         (else 
           (error "unknown exressoin type: DERIV" ex)))) 
 
@@ -56,5 +62,21 @@
 
 (define (multiplicand p) (caddr p))
 
+(define (exponent? x) (and (pair? x) (eq? (car x) '**)))
+
+(define (exponent-base s) (cadr s))
+
+(define (exponent-n s) (caddr s))
+
+(define (make-exponent base n) (list '** base n))
+(define (make-exponent base n) 
+  (cond ((= n 0) 1)
+        ((= n 1) base)
+        (else (list '** base n))
+        )
+  )
+
 (deriv '(+ x 3) 'x)
 (deriv '(* x x) 'x)
+(deriv '(** (** x 2) 3) 'x)
+(deriv '(** (** x 1) 3) 'x)
