@@ -1,0 +1,40 @@
+(load "lib/tree-balance.scm")
+
+
+(tree->list-2 (list->tree '(1 3 5 7 9 11)))
+
+(define (op-set s1 s2 list-op)
+  (list->tree (list-op (tree->list-2 s1) (tree->list-2 s2)))
+  )
+(define (union-set s1 s2)
+  (op-set s1 s2 union-list)
+  )
+(define (intersection-set s1 s2)
+  (op-set s1 s2 intersection-list)
+  )
+(define (union-list l1 l2)
+  (cond ((null? l1) l2)
+        ((null? l2) l1)
+        ((< (car l1) (car l2))
+         (cons (car l1) (union-list (cdr l1) l2)))
+        (else 
+          (cons (car l2) (union-list l1 (cdr l2)))
+          )
+        )
+  )
+
+(define (intersection-list l1 l2)
+  (cond ((null? l1) '())
+        ((null? l2) '())
+        ((< (car l1) (car l2))
+         (intersection-list (cdr l1) l2))
+        ((< (car l2) (car l1))
+         (intersection-list l1 (cdr l2)))
+        (else 
+          (cons (car l2) (intersection-list (cdr l1) (cdr l2)))
+          )
+        )
+  )
+
+(union-set (list->tree '(1 3 5)) (list->tree '(2 4 6)))
+(intersection-set (list->tree '(2 3 5 6 7 9 12 14)) (list->tree '(2 5 6 7 9 12 46)))
