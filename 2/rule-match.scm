@@ -241,6 +241,7 @@
 (dsimp '(dd (+ (* x x) (* y (** x 8))) x))
 (asimp (dsimp '(dd (+ (* x x) (* 8 (* x 8))) x)))
 (asimp '(** x 8))
+(dsimp '(dd (* (** x 4) (* x a)) x))
 ;; Algebraic simplification
 (define algebra-rules
   '(
