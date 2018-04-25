@@ -58,3 +58,4 @@
 
 (deriv '(+ x 3) 'x)
 (deriv '(* x x) 'x)
+(write (deriv '(* x x) 'x))

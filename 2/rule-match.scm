@@ -234,14 +234,6 @@
 (define (d-a-simp exp) 
   (asimp (dsimp exp))
   )
-(dsimp '(dd (+ x y) x))
-(asimp (dsimp '(dd (+ x y) x)))
-(dsimp '(dd (* x y) x))
-(asimp (dsimp '(dd (* x y) x)))
-(dsimp '(dd (+ (* x x) (* y (** x 8))) x))
-(asimp (dsimp '(dd (+ (* x x) (* 8 (* x 8))) x)))
-(asimp '(** x 8))
-(dsimp '(dd (* (** x 4) (* x a)) x))
 ;; Algebraic simplification
 (define algebra-rules
   '(
@@ -258,3 +250,13 @@
     ( (+ (+ (? e1) (? e2)) (? e3))            (+ (: e1) (+ (: e2) (: e3)))  )
     ( (+ (* (?c c1) (? e)) (* (?c c2) (? e))) (* (: (+ c1 c2)) (: e))       )
     ( (* (? e1) (+ (? e2) (? e3)))            (+ (* (: e1) (: e2))))))
+
+(dsimp '(dd (+ x y) x))
+(asimp (dsimp '(dd (+ x y) x)))
+(dsimp '(dd (* x y) x))
+(asimp (dsimp '(dd (* x y) x)))
+(dsimp '(dd (+ (* x x) (* y (** x 8))) x))
+(asimp (dsimp '(dd (+ (* x x) (* 8 (* x 8))) x)))
+(asimp '(** x 8))
+(dsimp '(dd (* (** x 4) (* x a)) x))
+(write (asimp (dsimp '(dd (+ (* x x) (* 8 (* x 8))) x))))
