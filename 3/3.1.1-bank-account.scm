@@ -47,8 +47,7 @@
   (define (dispatch m)
     (cond((eq? m 'withdraw) withdraw)
          ((eq? m 'deposit) deposit)
-         (else (error "Unknown request: MAKE-ACCOUNT"
-                      m))))
+         (else (error "Unknown request: MAKE-ACCOUNT" m))))
   dispatch)
 
 (define acc (make-account 100))
@@ -57,3 +56,28 @@
 ((acc 'deposit) 60)
 ((acc 'withdraw) 60)
 ((acc 'withdraw) 60)
+
+(define (make-account balance password)
+  (define (withdraw amount)
+    (if (>= balance amount)
+        (begin (set! balance (- balance amount))
+               balance)
+        "Insufficient funds"))
+  (define (deposit amount)
+    (set! balance (+ balance amount))
+    balance)
+
+  (define (dispatch ps m)
+    (cond ((eq? ps password)
+           (cond ((eq? m 'withdraw) withdraw)
+                 ((eq? m 'deposit) deposit)
+                 (else (error "Unknown request: MAKE-ACCOUNT" m))))
+          (else (error "Incorrect password")))
+    )
+  dispatch)
+
+
+(define acc (make-account 100 'secret))
+
+((acc 'secret 'withdraw) 10)
+((acc 'secret-p 'withdraw) 10)
