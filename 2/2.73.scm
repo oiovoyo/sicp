@@ -30,3 +30,6 @@
       (make-product (exponent-n ex) (make-exponent (exponent-base ex) (- (exponent-n ex) 1)))
       (deriv (exponent-base ex) var)))
   (put 'deriv '** deriv-exponent))
+
+
+
