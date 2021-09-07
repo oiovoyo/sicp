@@ -1,0 +1,29 @@
+* Environments
+  - where value is stored
+  - Is a sequence of frames
+  - Each frame is a table of bindings
+  - Each frame has a pointer to its enclosing environment
+  - global environment include some primitive procedures such as + car cdr cons and so on
+* 3.2.1 The Rules for Evaluation 
+  - procedure is always a pair consisting of some code and a pointer to an environment
+  - procedures are created in one way only: by evaluating a lambda-expression
+  the following example:
+  #+begin_src scheme
+  #+end_src
+
+  #+begin_src scheme
+    (define (square x)
+      (* x x))
+  #+end_src
+  is equivalent to:
+  #+begin_src scheme
+    (define square
+      (lambda (x) (* x x)))
+
+  #+end_src
+  - the define creates definitions by adding bindings to frames
+
+* 3.2.2 Applying Simple Procedures
+  - 
+    
+  
